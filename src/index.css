@@ -1,1 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap');
+
 @import "tailwindcss";
+
+@theme {
+    --font-cinzel: 'Cinzel', serif;
+
+    --color-bg-base: #0e0f14;
+    --color-bg-navbar: #161820;
+    --color-bg-elevated: #1e2130;
+    --color-border-main: #2a2d3e;
+    --color-text-primary: #dddbd5;
+    --color-text-secondary: #9b9da8;
+    --color-text-tertiary: #565869;
+    --color-accent: #7b8cad;
+    --color-accent-dark: #3d4a63;
+}
