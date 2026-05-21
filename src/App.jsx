@@ -1,27 +1,27 @@
 import { useEffect, useState } from "react";
 import { BrowserRouter } from "react-router";
-import { getCharacter } from "./services/itemService";
+import { getCharacters } from "./services/itemService";
 import Navbar from "./components/Navbar/Navbar";
 import HeroSection from "./components/HeroSection/HeroSection";
-import CharacterCard from "./components/CharacterCard/CharacterCard";
+import CharacterGrid from "./components/CharacterGrid/CharacterGrid";
 
 export default function App () {
-    const [character, setCharacter] = useState (null);
+    const [characters, setCharacters] = useState ([]);
 
     useEffect (() => {
-        const fetchCharacter = async () => {
-            const { data, error } = await getCharacter (2);
-            if (!error) setCharacter (data);
+        const fetchCharacters = async () => {
+            const { data, error } = await getCharacters ();
+            if (!error) setCharacters (data);
         }
 
-        fetchCharacter ();
+        fetchCharacters ();
     }, []);
 
     return (
         <BrowserRouter>
             <Navbar/>
             <HeroSection/>
-            <CharacterCard characterData={character}/>
+            <CharacterGrid characters={characters}/>
         </BrowserRouter>
     )
 }
