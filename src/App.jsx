@@ -3,7 +3,7 @@ import { BrowserRouter } from "react-router";
 import { getCharacters } from "./services/itemService";
 import Navbar from "./components/Navbar/Navbar";
 import HeroSection from "./components/HeroSection/HeroSection";
-import CharacterGrid from "./components/CharacterGrid/CharacterGrid";
+import CharacterSection from "./components/CharacterSection/CharacterSection";
 
 export default function App () {
     const [characters, setCharacters] = useState ([]);
@@ -21,7 +21,7 @@ export default function App () {
         <BrowserRouter>
             <Navbar/>
             <HeroSection/>
-            <CharacterGrid characters={characters}/>
+            <CharacterSection characters={characters}/>
         </BrowserRouter>
     )
 }
